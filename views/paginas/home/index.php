@@ -3,7 +3,7 @@
 <main class="contenedor contenido-principal">
     <h2>Busca un viaje</h2>
     <div class="contenido-viaje">
-        <form class="formulario" action="/viajes" method="POST">
+        <form class="formulario-viaje" action="/viajes" method="POST">
             <div class="campo">
                 <label for="desde">Desde:</label>
                 <input type="text" class="desde" id="desde" name="desde" placeholder="¿Desde donde viajas?" value="">

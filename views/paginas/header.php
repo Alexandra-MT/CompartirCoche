@@ -16,10 +16,10 @@
             </a>
         </div>
         <nav class="nav-principal">
-            <a>Comparte tu coche</a>
-            <a>Busca un viaje</a>
-            <a>Iniciar Sesión</a>
-            <a>Registrarse</a>   
+            <a href="/compartir">Comparte tu coche</a>
+            <a href="/buscar">Busca un viaje</a>
+            <a href="/login">Iniciar Sesión</a>
+            <a href="/registrar">Registrarse</a>   
         </nav>
     </div>
     <div class="contenido-header">

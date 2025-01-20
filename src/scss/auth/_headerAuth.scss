@@ -1,0 +1,15 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header-auth{
+    height:6.5rem;
+    box-shadow: 0px 6px 20px rgb(0 0 0 /40%);
+    @include m.tablet{
+        height:7.5rem;
+    }
+    
+   
+    
+}
+.formulario-auth{
+}
