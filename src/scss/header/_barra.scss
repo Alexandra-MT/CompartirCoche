@@ -23,12 +23,15 @@
 .barra{
     display:none;
     @include m.tablet{
-        padding: 0 10rem;
+        padding: 0 5rem;
         background-color: v.$blanco;
         display:flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+    @include m.desktop{
+        padding: 0 10rem;
     }
 }
 

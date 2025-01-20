@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-principal{
+    h2{
+        margin-top: 5rem;
+    }
+}
+
+.formulario{
+    margin:5rem auto 2rem auto;
+    background-color: v.$blanco;
+    border-radius: 5rem;
+    box-shadow: 0px 3px 7px 0px v.$grisClaro;
+    padding: 3rem 0;
+    @include m.desktop{
+        display:flex;
+        justify-content: space-between;
+        max-width: 100rem;
+        padding:0;
+    }
+    .campo {
+        padding:1rem 2rem;
+        display:flex;
+        flex-direction: column;
+        &:nth-child(1){
+            @include m.desktop{
+                padding-left: 4rem;
+            } 
+        }
+        &:hover{
+            background-color: #f0f0f0;
+            border-radius: 5rem;
+            box-shadow: 0px 6px 20px rgb(0 0 0 /40%);
+        } 
+    }
+    label{
+        font-weight: 500;
+    }
+    input, select{
+        border:none;
+        width:100%;
+        color: v.$grisClaro;
+    }
+    input[type="submit"]{
+        display:block;
+        height: 4rem;
+        border: none;
+        border-radius: 2rem;
+        //width:10rem;
+        background-image: radial-gradient(circle, v.$primario 0%, v.$secundario 100%);
+        padding: 0 2rem;
+        color:v.$blanco;
+    }
+}
