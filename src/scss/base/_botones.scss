@@ -9,7 +9,9 @@
 
 .boton-primario-block {
     @include m.boton(v.$primario, block);
-    margin: 2rem 0;
+    margin: auto;
+    margin-top:5rem;
+    border-radius: 2rem;
 }
 
 .boton-secundario {

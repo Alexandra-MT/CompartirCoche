@@ -3,6 +3,7 @@
 
 
 .barra-mobile{
+    height:7rem;
     padding: 0 5rem;
     background-color: v.$blanco;
     display:flex;
@@ -34,9 +35,8 @@
         padding: 0 10rem;
     }
 }
-
 .logo{
-    width:50%;
+    max-width:50%;
    // margin: 0 auto;
 
     @include m.tablet{

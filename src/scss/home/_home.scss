@@ -35,6 +35,7 @@
         } 
     }
     label{
+        color:v.$grisOscuro;
         font-weight: 500;
     }
     input, select{
@@ -51,6 +52,9 @@
         background-image: radial-gradient(circle, v.$primario 0%, v.$secundario 100%);
         padding: 0 2rem;
         color:v.$blanco;
+        &:hover{
+            cursor:pointer;
+        }
     }
 }
 .conoce{
@@ -71,6 +75,9 @@
         border: .3rem solid v.$blanco;
         &:hover{
             border: .3rem solid v.$primario;
+        }
+        p{
+            color:v.$grisOscuro;
         }
     }
 

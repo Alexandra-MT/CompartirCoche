@@ -19,13 +19,13 @@
             <a href="/compartir">Comparte tu coche</a>
             <a href="/buscar">Busca un viaje</a>
             <a href="/login">Iniciar Sesión</a>
-            <a href="/registrar">Registrarse</a>   
+            <a href="/crear-cuenta">Crear cuenta</a>   
         </nav>
     </div>
     <div class="contenido-header">
         <div class="texto-header">
             <h1><?php echo $textoHeader ? $textoHeader : ''; ?></h1>
-            <a href="/registrar" class="boton-primario">Comienza ahora</a>
+            <a href="/crear-cuenta" class="boton-primario">Comienza ahora</a>
         </div>
     </div>
 </header>
