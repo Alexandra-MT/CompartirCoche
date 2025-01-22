@@ -16,8 +16,10 @@ class LoginController{
         echo 'desde Logout';
     }
 
-    public static function olvide(){
-        echo 'desde olvide';
+    public static function olvide(Router $router){
+        $router->render('auth/olvide-password',[
+            'titulo' => 'Olvide Password'
+        ]);
     }
 
     public static function recuperar(){

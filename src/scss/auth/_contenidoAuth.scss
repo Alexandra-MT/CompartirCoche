@@ -1,33 +1,40 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+.subtitulo-auth{
+    text-align: center;
+    margin-bottom: 5rem;
+    color:v.$grisOscuro;
+    font-size: 1.8rem;
+}
 .contenido-auth{
     max-width:50rem;
     margin:0 auto;
-}
-.formulario-auth{
-    width:100%;
-}
-.campo-auth{
-    display:flex;
-    margin-bottom: 2rem;
-    align-items: center;
-    label{
-        color:v.$grisOscuro;
-        flex: 0 0 10rem;
+    .formulario-auth{
+        width:100%;
     }
-    input{
-        flex:1;
-        border:none;
-        padding:calc(v.$separacion / 4);
-        border-radius: 1rem;
-        border: .2rem solid v.$blanco;
-        &:hover{
-            border: .2rem solid v.$primario;
+    .campo-auth{
+        display:flex;
+        margin-bottom: 2rem;
+        align-items: center;
+        label{
+            color:v.$grisOscuro;
+            flex: 0 0 10rem;
         }
+        input{
+            flex:1;
+            border:none;
+            padding:calc(v.$separacion / 4);
+            border-radius: 1rem;
+            border: .2rem solid v.$blanco;
+            &:hover{
+                border: .2rem solid v.$primario;
+            }
+        }
+       
     }
-   
 }
+
 .acciones{
     margin:5rem 0;
     display:flex;
