@@ -70,11 +70,12 @@
         margin-bottom: 5rem;
         padding:2rem 5rem 2rem 5rem;
         background-color: v.$blanco;
-        border-top-left-radius: 5rem;
-        border-bottom-right-radius: 5rem;
-        border: .3rem solid v.$blanco;
+        //border-top-left-radius: 5rem;
+        //border-bottom-right-radius: 5rem;
+        //border: .3rem solid v.$blanco;
+        //border-top: .3rem solid v.$primario;
         &:hover{
-            border: .3rem solid v.$primario;
+            //border: .3rem solid v.$primario;
         }
         p{
             color:v.$grisOscuro;
