@@ -18,17 +18,21 @@
                 <input type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono" value="<?php echo s($usuario->telefono); ?>">
             </div>
             <div class="campo-auth">
-                <label for="email">Email:</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Tu Email" value="<?php echo s($usuario->email); ?>">
             </div>
             <div class="campo-auth">
-                <label for="password">Password:</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Tu password">
+            </div>
+            <div class="campo-auth">
+                <label for="password2">Repetir Password</label>
+                <input type="password" id="password2" name="password2" placeholder="Repite tu password">
             </div>
             <input type="submit" class="boton boton-primario-block" value="Crear Cuenta">
         </form>
         <div class="acciones">
-            <a href="/login">¿Ya tienes una cuenta?</a>
+            <a href="/login">¿Ya tienes una cuenta? Iniciar Sesión</a>
             <a href="/olvide">¿Olvidaste tu password?</a>
         </div>
     </div>

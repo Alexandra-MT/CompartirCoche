@@ -8,14 +8,14 @@
     font-size: 1.8rem;
 }
 .contenido-auth{
-    max-width:50rem;
+    max-width:70rem;
     margin:0 auto;
     .formulario-auth{
         width:100%;
     }
     .campo-auth{
         display:flex;
-        margin-bottom: 2rem;
+        margin-bottom:2rem;
         align-items: center;
         label{
             color:v.$grisOscuro;
@@ -40,9 +40,9 @@
     display:flex;
     justify-content: space-between;
     a{
-        color:v.$grisOscuro;
+        color:v.$secundario;
         &:hover{
-            color: v.$secundario;
+            color: v.$grisOscuro;
         }
     }
 }

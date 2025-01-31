@@ -5,59 +5,94 @@
     h2{
         margin-top: 5rem;
     }
+    
 }
+.contenido-viaje{
+    margin-bottom:5rem;
 
-.formulario-viaje{
-    margin:5rem auto 2rem auto;
-    background-color: v.$blanco;
-    border-radius: 5rem;
-    box-shadow: 0px 3px 7px 0px v.$grisClaro;
-    padding: 3rem 0;
-    @include m.desktop{
-        display:flex;
-        justify-content: space-between;
-        max-width: 100rem;
-        padding:0;
-    }
-    .campo {
-        padding:1rem 2rem;
-        display:flex;
-        flex-direction: column;
-        &:nth-child(1){
-            @include m.desktop{
-                padding-left: 4rem;
+    .formulario-viaje{
+        margin:5rem auto 2rem auto;
+        background-color: v.$blanco;
+        border-radius: 5rem;
+        box-shadow: 0px 3px 7px 0px v.$grisClaro;
+        padding: 3rem 0;
+        @include m.desktop{
+            display:flex;
+            justify-content: space-between;
+            max-width: 100rem;
+            padding:0;
+        }
+        .campo {
+            padding:1rem 2rem;
+            display:flex;
+            flex-direction: column;
+            &:nth-child(1){
+                @include m.desktop{
+                    padding-left: 4rem;
+                } 
+            }
+            &:hover{
+                background-color: #f0f0f0;
+                border-radius: 5rem;
+                box-shadow: 0px 6px 20px rgb(0 0 0 /40%);
             } 
         }
-        &:hover{
-            background-color: #f0f0f0;
-            border-radius: 5rem;
-            box-shadow: 0px 6px 20px rgb(0 0 0 /40%);
-        } 
-    }
-    label{
-        color:v.$grisOscuro;
-        font-weight: 500;
-    }
-    input, select{
-        border:none;
-        width:100%;
-        color: v.$grisClaro;
-    }
-    input[type="submit"]{
-        display:block;
-        height: 4rem;
-        border: none;
-        border-radius: 2rem;
-        //width:10rem;
-        background-image: radial-gradient(circle, v.$primario 0%, v.$secundario 100%);
-        padding: 0 2rem;
-        color:v.$blanco;
-        &:hover{
-            cursor:pointer;
+        label{
+            color:v.$grisOscuro;
+            font-weight: 500;
+            padding:0 .5rem;
+        }
+        input, select{
+            border:none;
+            width:100%;
+            color: v.$grisClaro;
+            padding:.5rem;
+        }
+        input[type="submit"]{
+            display:block;
+            height: 5rem;
+            border: none;
+            border-radius: 3rem;
+            background-image: radial-gradient(circle, v.$primario 0%, v.$secundario 100%);
+            padding: 0 2rem;
+            color:v.$blanco;
+            &:hover{
+                cursor:pointer;
+            }
         }
     }
 }
-.conoce{
+
+.sobre-nosotros{
+    background-color:v.$blanco;
+    padding:5rem;
+    @include m.grid(1,2rem);
+    @include m.tablet{
+        padding:10rem;
+        @include m.grid(2,5rem);
+    }
+    .texto-nosotros{
+        h3{
+            margin-bottom: 0;
+            text-align: left;
+            color:v.$primario;
+        }
+        p{
+            text-align: justify;
+        }
+    }
+    .imagen-nosotros{
+        img{
+            @include m.desktop{
+                width:70%;
+                margin:0 auto;
+            }
+         
+        }
+    }
+}
+
+.conoce-objetivos{
     .objetivos{
         text-align: justify;
         @include m.grid(1,0rem);
@@ -68,18 +103,21 @@
     }
     .contenedor-objetivos{
         margin-bottom: 5rem;
-        padding:2rem 5rem 2rem 5rem;
-        background-color: v.$blanco;
-        //border-top-left-radius: 5rem;
-        //border-bottom-right-radius: 5rem;
-        //border: .3rem solid v.$blanco;
-        //border-top: .3rem solid v.$primario;
-        &:hover{
-            //border: .3rem solid v.$primario;
+        .objetivo{
+            background-color: v.$blanco;
+            padding:1rem 2rem;
+            margin-bottom:1rem;
+            height: 15rem;
+            border-left: .3rem solid v.$primario;
+            @include m.desktop{
+                height:12rem;
+            }
         }
         p{
             color:v.$grisOscuro;
+            span{
+                font-weight: 700;
+            }
         }
     }
-
 }

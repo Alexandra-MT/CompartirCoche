@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="contenedor contenido-footer nosotros">
+    <div class="contenedor contenido-footer">
         <div class="footer-box nosotros">
             <h3>Nosotros</h3>
             <a href="/nosotros">Sobre nosotros</a>

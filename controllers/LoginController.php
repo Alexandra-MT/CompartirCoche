@@ -24,8 +24,11 @@ class LoginController{
         ]);
     }
 
-    public static function recuperar(){
-        echo 'desde recuperar';
+    public static function reestablecer(Router $router){
+       
+        $router->render('auth/reestablecer',[
+            'titulo' => 'Reestablecer Password'
+        ]);
     }
 
     public static function crear(Router $router){
@@ -34,29 +37,33 @@ class LoginController{
         //alertas vacias
         $alertas = [];
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            
+            //Sincronizar datos
             $usuario->sincronizar($_POST);
+            //Validación
             $alertas = $usuario->validarNuevaCuenta();
            
-            //Revisar que $alertas está vacío
+            //Revisar que $alertas está vacío, datos correctos
             if(empty($alertas)){
                 //Verificar que el usuario no esté registrado
                 $existeUsuario = Usuario::where('email', $usuario->email);
                 if($existeUsuario){
+                    //Si está registrado
                     Usuario::setAlerta('error', 'El Usuario ya esta registrado');
                 }else{
-                    //No está registrado
+                    //Si NO está registrado
 
                     //Hashear el password
                     $usuario->hashPassword();
+                    //Eliminar password2, atributo temporal
+                    unset($usuario->password2);
                     //Crear token
                     $usuario->crearToken();
-                    //Enviar el email
-                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
-                    $email->enviarConfirmacion();
                     //Crear el usuario
                     $resultado = $usuario->guardar();
-                    if($resultado){
+                    if(!$resultado){
+                        //Si se guarda en la bbdd, enviamos un email.
+                        $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                        $email->enviarConfirmacion();
                         header('Location:/mensaje');
                     }else{
                         $alertas = Usuario::setAlerta('error', 'Lo sentimos, hubo un error. Por favor, inténtelo más tarde.');
@@ -68,6 +75,16 @@ class LoginController{
         $router->render('auth/crear-cuenta',[
             'titulo' => 'Crear Cuenta',
             'usuario' => $usuario,
+            'alertas' => $alertas
+        ]);
+    }
+
+    public static function confirmar(Router $router){
+        $alertas = [];
+        $token = s($_GET['token']);
+        Usuario::where('token',$token);
+        $router->render('auth/confirmar-cuenta',[
+            'titulo' => 'Confirmar Cuenta',
             'alertas' => $alertas
         ]);
     }

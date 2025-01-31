@@ -30,18 +30,39 @@
             </div>
         </form>
     </div>
-    <section class="conoce">
-        <h2>Nuestro objetivo es aumentar el bienestar</h2>
+    <section class="sobre-nosotros">
+        <div class="texto-nosotros">
+            <h3>Sobre Nosotros</h3>
+            <p>Somos una Asociación que tiene como misión mejorar el bienestar de la sociedad al compartir actividades, recursos, habilidades y conocimientos. Para nosotros la sociedad no tiene fronteras por lo que esperamos que nuestras acciones tengan eco en todo el universo.</p>
+        </div>
+        <div class="imagen-nosotros">
+            <img src="/build/img/foto_nosotros.jpg" alt="Sección Seguridad">
+        </div>
+    </section>
+    <section class="conoce-objetivos">
+        <h2>Nuestros objetivos</h2>
         <div class="objetivos">
             <div class="contenedor-objetivos">
-                <p>Ayudando al medio ambiente 🌳👍: al viajar más pasajeros, hay menos vehículos circulando.<p>
-                <p>Reduciendo el tiempo de desplazamiento y aumentando la seguridad. Al haber menos coches, el tráfico es más fluido.</p>
-                <p>Establecer nuevos contactos.</p>
+                <div class="objetivo">
+                    <p><span>Ayudando al medio ambiente.</span> Al viajar más pasajeros, hay menos vehículos circulando.<p>
+                </div>
+                <div class="objetivo">
+                    <p><span>Reduciendo el tiempo de desplazamiento y aumentando la seguridad.</span> Al haber menos coches, el tráfico es más fluido.</p>
+                </div>
+                <div class="objetivo">
+                    <p><span>Establecer nuevos contactos,</span> y porque no, nuevos amigos.</p>
+                </div>
             </div>
             <div class="contenedor-objetivos">
-                <p>Entretenimiento durante el desplazamiento gracias a las conversaciones entre viajeros.</p>
-                <p>Evitando gastos de desplazamientos. Los pasajeros contribuyen a los gastos que tiene el conductor que ofrece el viaje.</p>
-                <p>Facilitando una red de usuarios, una comunidad. Humanizando la sociedad.</p>
+                <div class="objetivo">
+                    <p><span>Entretenimiento durante el desplazamiento</span> gracias a las conversaciones entre viajeros.</p>
+                </div>
+                <div class="objetivo">
+                    <p><span>Evitando gastos de desplazamientos.</span> Los pasajeros contribuyen a los gastos que tiene el conductor que ofrece el viaje.</p>
+                </div>
+                <div class="objetivo">
+                    <p><span>Facilitando una red de usuarios, una comunidad.</span> Humanizando la sociedad.</p>
+                </div>
             </div>
         </div>   
     </section>

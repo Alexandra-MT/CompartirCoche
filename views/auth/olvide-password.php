@@ -11,6 +11,10 @@
             </div>
             <input type="submit" class="boton boton-primario-block" value="Enviar Intrucciones">
         </form>
+        <div class="acciones">
+            <a href="/crear-cuenta">¿Aún no tienes una cuenta? Crea una</a>
+            <a href="/login">¿Ya tienes una cuenta? Iniciar Sesión</a>
+        </div>
     </div>
 </main>
     

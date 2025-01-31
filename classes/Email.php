@@ -6,9 +6,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 class Email{
 
-    public $email;
-    public $nombre;
-    public $token;
+    protected $email;
+    protected $nombre;
+    protected $token;
 
     public function __construct($email, $nombre, $token){
         $this->email = $email;

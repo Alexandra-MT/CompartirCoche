@@ -14,6 +14,7 @@ class Usuario extends ActiveRecord{
     public $telefono;
     public $email;
     public $password;
+    public $password2; //atributo temporal
     public $admin;
     public $confirmado;
     public $token;
@@ -25,6 +26,7 @@ class Usuario extends ActiveRecord{
         $this->telefono = $args['telefono'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
+        $this->password2 = $args['password2'] ?? '';
         $this->admin = $args['admin'] ?? '0';
         $this->confirmado = $args['confirmado'] ?? '0';
         $this->token = $args['token'] ?? '';
@@ -50,6 +52,9 @@ class Usuario extends ActiveRecord{
         if(!(strlen($this->password) > 8 && preg_match('`[a-z]`',$this->password) && preg_match('`[A-Z]`',$this->password) && preg_match('`[0-9]`',$this->password) && preg_match('`[\W]`', $this->password))){
             self::setAlerta('error', 'El Password debe tener al menos 8 caracteres, una letra minúscula, una letra mayúscula, un número y un carácter especial');
         }
+        if($this->password !== $this->password2){
+            self::setAlerta('error', 'Los password son diferentes');
+        }
         return self::getAlertas();
     }
 
@@ -59,7 +64,7 @@ class Usuario extends ActiveRecord{
     }
 
     public function crearToken(){
-        $this->token = uniqid();
+        $this->token = md5(uniqid()); //retorna 32 caracteres
     }
         
 }
