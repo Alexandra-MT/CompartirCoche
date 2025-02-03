@@ -22,18 +22,18 @@
                 <input type="email" id="email" name="email" placeholder="Tu Email" value="<?php echo s($usuario->email); ?>">
             </div>
             <div class="campo-auth">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Tu password">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Tu contraseña">
             </div>
             <div class="campo-auth">
-                <label for="password2">Repetir Password</label>
-                <input type="password" id="password2" name="password2" placeholder="Repite tu password">
+                <label for="password2">Repetir Contraseña</label>
+                <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña">
             </div>
             <input type="submit" class="boton boton-primario-block" value="Crear Cuenta">
         </form>
         <div class="acciones">
             <a href="/login">¿Ya tienes una cuenta? Iniciar Sesión</a>
-            <a href="/olvide">¿Olvidaste tu password?</a>
+            <a href="/olvide">¿Olvidaste tu contraseña?</a>
         </div>
     </div>
 </main>
