@@ -34,6 +34,9 @@ function mostrarNotificacion($codigo){
             $mensaje='Actualizado Correctamente';
             break;
         case 3:
+            $mensaje='Cancelado Correctamente';
+            break;
+        case 4:
             $mensaje='Eliminado Correctamente';
             break;
         default:
@@ -42,3 +45,5 @@ function mostrarNotificacion($codigo){
     }
     return $mensaje;
 }
+
+?>

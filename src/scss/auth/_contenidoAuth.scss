@@ -31,18 +31,19 @@
                 border: .2rem solid v.$primario;
             }
         }
-       
+        
     }
-}
-
-.acciones{
-    margin:5rem 0;
-    display:flex;
-    justify-content: space-between;
-    a{
-        color:v.$secundario;
-        &:hover{
-            color: v.$grisOscuro;
+    .acciones{
+        margin:5rem 0;
+        a{
+            color:v.$secundario;
+            width:100%;
+            text-align: center;
+            &:hover{
+                color: v.$grisOscuro;
+            }
         }
     }
 }
+
+

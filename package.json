@@ -23,6 +23,7 @@
     ">1%"
   ],
   "dependencies": {
-    "sass-color-helpers": "^2.1.1"
+    "sass-color-helpers": "^2.1.1",
+    "sweetalert2": "^11.17.2"
   }
 }

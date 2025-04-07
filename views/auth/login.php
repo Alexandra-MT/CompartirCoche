@@ -11,7 +11,7 @@
             </div>
             <div class="campo-auth">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" placeholder="Tu contraseña">
+                <input type="password" id="password" name="password" placeholder="Tu Contraseña">
             </div>
             <input type="submit" class="boton boton-primario-block" value="Iniciar Sesión">
         </form>

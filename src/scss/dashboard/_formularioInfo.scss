@@ -1,0 +1,63 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario-perfil{
+    .campo{
+        display:flex;
+        column-gap: 2rem;
+        margin: 2rem 0;
+        label{
+            flex: 0 0 10rem;
+            padding: .5rem 0;
+        }
+        input{
+            flex:1;
+            padding: .5rem;
+            &:hover{
+                border: .2rem solid v.$primario;
+            }
+        }
+    }
+}
+
+.acciones{
+    display:flex;
+    justify-content: center;
+    column-gap: 5rem;
+    input[type="submit"], a{
+        width:15rem;
+        color:v.$blanco;
+    }
+}
+
+.formulario-perfil.infoad{
+    .campo{
+        display:block;
+        label{
+            display:block;
+            padding: .5rem 0;
+            margin-bottom: .5rem;
+        }
+        textarea, select{
+            padding: .5rem;
+            &:hover{
+                border: .1rem solid v.$primario;
+            }
+        }
+        textarea{
+            width:35rem;
+            height: 10rem;
+            @include m.tablet{
+                width:60rem;
+            }  
+        }
+    }
+    
+}
+.multiselect{
+    display:flex;
+    column-gap: 2rem;
+    @include m.tablet{
+        column-gap: 5rem;
+    }
+}

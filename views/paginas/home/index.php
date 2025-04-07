@@ -2,34 +2,7 @@
 
 <main class="contenedor contenido-principal">
     <h2>Busca un viaje</h2>
-    <div class="contenido-viaje">
-        <form class="formulario-viaje" action="/viajes" method="POST">
-            <div class="campo">
-                <label for="desde">Desde:</label>
-                <input type="text" class="desde" id="desde" name="desde" placeholder="¿Desde donde viajas?" value="">
-            </div>
-            <div class="campo">
-                <label for="hacia">Hacia:</label>
-                <input type="text" class="hacia" id="hacia" name="hacia" placeholder="¿A donde viajas?" value="">
-            </div>
-            <div class="campo">
-                <label for="fecha">Fecha:</label>
-                <input type="date" class="fecha" id="fecha" name="fecha">
-            </div>
-            <div class="campo">
-                <label for="personas">Personas:</label>
-                <select name="personas" id="personas" >
-                    <option selected disabled value="">¿Cuántos?</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-            <div class="campo boton-busqueda">
-                <input type="submit" value="Buscar">
-            </div>
-        </form>
-    </div>
+    <?php include_once __DIR__.'/buscaViaje.php'; ?>
     <section class="sobre-nosotros">
         <div class="texto-nosotros">
             <h3>Sobre Nosotros</h3>
@@ -68,5 +41,5 @@
     </section>
 </main>
 
-
+<?php $script .= '<script src="build/js/mobile.js"></script>'; ?>
 <?php include_once __DIR__.'/../footer.php'; ?>

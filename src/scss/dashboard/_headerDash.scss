@@ -1,0 +1,119 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.barra{
+    .usuario{
+        display:flex;
+        column-gap: 2rem;
+        align-items: center;
+        p{
+            font-family: v.$fuente_cursiva;
+            font-size: 1.8rem;
+            color:v.$primario;
+            font-weight: 900;
+        }
+        .menu-perfil{
+            display:flex;
+            column-gap: .5rem;
+            align-items: center;
+            .imagen-perfil{
+                img{
+                    width:5rem;
+                    height:5rem;
+                    background-size: cover;
+                    margin:1rem auto;
+                    border-radius: 50rem;
+                    border:.1rem solid v.$blanco;
+                    &:hover{
+                        border:.1rem solid v.$primario;
+                        cursor:pointer;
+                    }
+                }  
+            }
+            .desplegar-menu{
+                width:1.5rem;  
+                &:hover{
+                    cursor:pointer;
+                }
+            }
+        }
+    }
+}
+
+.barra-mobile{
+    .usuario-mobile{
+        .menu-perfilm{
+            display:flex;
+            column-gap: .5rem;
+            align-items: center;
+        
+            .imagen-perfil{
+                max-width: 5rem;
+                img{
+                    border-radius: 50rem;
+                    border:.1rem solid v.$blanco;
+                    &:hover{
+                        border:.1rem solid v.$primario;
+                    }
+                }  
+            }
+            .desplegar-menu{
+                width:1rem;
+            }
+        }
+    }
+}
+
+.menu-usuario{
+    display:none;  
+}
+.menu-usuario.mostrar{
+    display:block;
+    background-color: v.$blanco;
+    ul{
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        
+        @include m.tablet{
+            display:flex;
+            //justify-content:space-between;
+        }
+       
+        li{
+            padding:2rem;
+            width:35rem;
+            text-align: center;
+            a{
+                color:v.$primario;  
+            }
+            &:last-of-type{
+                a{
+                     color:v.$rojo;
+                }
+               
+            }
+            
+            &:hover{
+                background-color: v.$primario;
+                a{
+                    color:v.$blanco;
+                    cursor:pointer;
+
+                }
+            }
+        } 
+    } 
+}
+
+.contenido-dashboard{
+    margin:5rem auto;
+    h2{  
+        font-size: 2.8rem; 
+        
+    }
+    &.separacion{
+        margin-top: 10rem;
+    }
+}
+    

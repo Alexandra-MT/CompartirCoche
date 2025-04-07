@@ -34,7 +34,7 @@ class LoginController{
                         $_SESSION['login'] = true;
 
                         //Redireccionar
-                        header('Location: /viajes');
+                        header('Location: /dashboard');
         
                     }else{
                         Usuario::setAlerta('error', 'Contraseña incorrecta');
@@ -51,7 +51,9 @@ class LoginController{
     }
 
     public static function logout(){
-        echo 'desde Logout';
+        session_start();
+        $_SESSION = [];  
+        header('Location: /');
     }
 
     public static function olvide(Router $router){
@@ -72,6 +74,8 @@ class LoginController{
                     //Generar un nuevo token
                     $usuario->crearToken();
                     unset($usuario->password2);
+                    //Guardar fecha 
+                    $usuario->fechaCrear = date('Y-m-d');
                     //Actualizar el usuario
                     $resultado = $usuario->guardar();
                     if($resultado){
@@ -108,32 +112,41 @@ class LoginController{
         //Identificar el usuario con este token
         $usuario = Usuario::where('token', $token);
         if(empty($usuario)){
-            Usuario::setAlerta('error', 'El Usuario No Existe');
+            Usuario::setAlerta('error', 'Lo sentimos, el enlace de restablecimiento de la contraseña ha caducado o su contraseña ya ha sido restablecida.');
             $mostrar = false;
-        }
-
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            //Añadir el nuevo password
-            $usuario->sincronizar($_POST);
-            //Validar el password
-            $alertas = $usuario->validarPassword();
-            if(empty($alertas)){
-                //Hashear el nuevo password
-                $usuario->hashPassword();
-                //Eliminar password2, atributo temporal
-                unset($usuario->password2);
-                //Eliminar el token
+        }else{
+            //VERIFICAR FECHA PARA ELIMINAR TOKEN
+            $fechaCrear = $usuario->fechaCrear;
+            $fechaActual = date('Y-m-d');
+            if($fechaCrear !== $fechaActual){
                 $usuario->token = null;
-                //Guardar en la BBDD
-                $resultado = $usuario->guardar();
-                //Redireccionar
-                if($resultado){
-                    Usuario::setAlerta('exito', 'Contraseña restablecida correctamente');
-                    $mostrar = false;
-                    header("refresh: 3; url = /login");
-                }else{
-                    Usuario::setAlerta('error', 'Lo sentimos, hubo un error. Por favor, inténtelo más tarde.');
-                }
+                $usuario->guardar();
+                Usuario::setAlerta('error', 'Lo sentimos, el enlace de restablecimiento  de la contraseña ha caducado.');
+                $mostrar = false;
+            }
+            if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                //Añadir el nuevo password
+                $usuario->sincronizar($_POST);
+                //Validar el password
+                $alertas = $usuario->validarPassword();
+                if(empty($alertas)){
+                    //Hashear el nuevo password
+                    $usuario->hashPassword();
+                    //Eliminar password2, atributo temporal
+                    unset($usuario->password2);
+                    //Eliminar el token
+                    $usuario->token = null;
+                    //Guardar en la BBDD
+                    $resultado = $usuario->guardar();
+                    //Redireccionar
+                    if($resultado){
+                        Usuario::setAlerta('exito', 'Contraseña restablecida correctamente');
+                        $mostrar = false;
+                        header("refresh: 3; url = /login");
+                    }else{
+                        Usuario::setAlerta('error', 'Lo sentimos, hubo un error. Por favor, inténtelo más tarde.');
+                    }
+                }   
             }
         }
 
@@ -200,24 +213,34 @@ class LoginController{
         $token = s($_GET['token']);
         //Si no hay token, lo redirigimos
         if(!$token) header('Location:/');
+
         //Encontrar al usuario que tiene el token
         $usuario = Usuario::where('token', $token);
         if(empty($usuario)){
             //No se encontró un usuario con ese token.
-            Usuario::setAlerta('error', 'No se pudo confirmar su cuenta, por favor intente crear una nueva cuenta.');
+            Usuario::setAlerta('error', 'Lo sentimos, el enlace de confirmación de la cuenta ha caducado o su nueva cuenta ya ha sido confirmada.');
         }else{
-            //Confirmar la cuenta
-            $usuario->confirmado = 1;
-            $usuario->token = null;
-            unset($usuario->password2);
-            
-            //Guardar en la BBDD
-            $resultado = $usuario->guardar();
-            if($resultado){
-                Usuario::setAlerta('exito', 'Cuenta confirmada correctamente');
-                header("refresh: 3; url = /login");
+             //VERIFICAR FECHA PARA ELIMINAR TOKEN
+            $fechaCrear = $usuario->fechaCrear;
+            $fechaActual = date('Y-m-d');
+            if($fechaCrear !== $fechaActual){
+                $usuario->eliminar();
+                Usuario::setAlerta('error', 'Lo sentimos, el enlace de confirmación de la cuenta ha caducado.');
             }else{
-                Usuario::setAlerta('error', 'Lo sentimos, hubo un error. Por favor, inténtelo más tarde.');
+                //Confirmar la cuenta
+                $usuario->confirmado = 1;
+                $usuario->token = null;
+                //$usuario->fecha = NULL;
+                unset($usuario->password2);
+    
+                //Guardar en la BBDD
+                $resultado = $usuario->guardar();
+                if($resultado){
+                    Usuario::setAlerta('exito', 'Cuenta confirmada correctamente.');
+                    header("refresh: 3; url = /login");
+                }else{
+                    Usuario::setAlerta('error', 'Lo sentimos, hubo un error. Por favor, inténtelo más tarde.');
+                }
             }
         }
 
@@ -235,3 +258,5 @@ class LoginController{
         ]);
     }
 }
+
+?>

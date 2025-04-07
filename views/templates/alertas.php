@@ -1,3 +1,4 @@
+<div class="alertas">
 <?php
 foreach ($alertas as $key=>$mensajes){
     foreach($mensajes as $mensaje){ 
@@ -9,3 +10,4 @@ foreach ($alertas as $key=>$mensajes){
     }
 }
 ?>
+</div>

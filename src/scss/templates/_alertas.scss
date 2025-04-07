@@ -16,4 +16,8 @@
     &.exito{
         background-color: v.$verde;
     }
+    &.info{
+        background-color: v.$primario;
+        text-align: center;
+    }
 }

@@ -196,4 +196,11 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return $resultado  ;
     } 
+
+    //Filtro varios campos
+    public static function filterFind($valor1, $valor2, $valor3, $valor4){
+        $query= "SELECT viajes.id, viajes.origen, viajes.destino, viajes.direccionRecogida, viajes.fecha, viajes.hora, viajes.plazas, viajes.precio, viajes.automatico, viajes.mascota, viajes.informacion, usuarios.nombre as usuario, usuarios.foto, usuarios.telefono, usuarios.email FROM ".static::$tabla." LEFT OUTER JOIN usuarios ON viajes.propietarioId=usuarios.id WHERE origen='".$valor1."' AND destino='".$valor2."' AND fecha='".$valor3."' AND plazas>='".$valor4."' ORDER BY hora";
+        $resultado = self::consultarSQL($query);
+        return $resultado  ;
+    }
 }

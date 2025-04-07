@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.viajes{
+    background-color: v.$blanco;
+    padding:5rem;
+    margin-bottom: 5rem;
+    border: .2rem solid v.$primario;
+    .titulo-viaje{
+        color:v.$primario;
+        font-weight: 900;
+        font-size: 2rem;
+        margin-top:0;
+    }
+    .flecha{
+        width:1rem;
+        display:inline;
+    }
+    span{
+        font-weight: 700;
+    }
+}
+
+
+
+

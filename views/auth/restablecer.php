@@ -9,11 +9,11 @@
         <form class="formulario-auth" method="POST">
             <div class="campo-auth">
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Tu contraseña">
+                <input type="password" id="password" name="password" placeholder="Tu Contraseña">
             </div>
             <div class="campo-auth">
                 <label for="password2">Repetir Contraseña</label>
-                <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña">
+                <input type="password" id="password2" name="password2" placeholder="Repite tu Contraseña">
             </div>
             <input type="submit" class="boton boton-primario-block" value="Restablecer">
         </form>

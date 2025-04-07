@@ -3,7 +3,7 @@
 
 .header{
     background-color: v.$blanco;
-    height: 66rem;
+    height: 67rem;
     @include m.tablet{
         height: 68.5rem;
     }
@@ -26,6 +26,9 @@
             bottom:0;
             opacity:.4;
         }
+        &.ocultar{
+            display:none;
+        }
         .texto-header{
             position: absolute;
             max-width: 50rem;
@@ -46,17 +49,20 @@
                     
                 }
             }
-            &.mostrar{
-                h1{
-                    margin-top:7rem;
-                }
-               
-            }
             a{
                 display:grid;
                 margin:auto;
                 width:20rem;
             }
+
+            &.ocultar{
+                h1{
+                    display:none;
+                }
+                a{
+                    display:none;
+                }
+            } 
         }
     }      
 }

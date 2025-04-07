@@ -45,7 +45,7 @@
         input, select{
             border:none;
             width:100%;
-            color: v.$grisClaro;
+            color: v.$grisOscuro;
             padding:.5rem;
         }
         input[type="submit"]{
@@ -60,8 +60,12 @@
                 cursor:pointer;
             }
         }
+        .texto{
+            font-weight: 600;
+        }
     }
 }
+
 
 .sobre-nosotros{
     background-color:v.$blanco;

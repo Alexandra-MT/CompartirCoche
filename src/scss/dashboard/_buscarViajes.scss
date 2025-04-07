@@ -1,0 +1,58 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.buscar-viajes{
+    .viajes{
+        padding: 1rem 5rem;
+        border-radius: 1rem;
+        &:hover{
+            box-shadow: 0px 3px 7px 0px v.$primario;
+        }
+        .descripcion-viaje{
+            @include m.tablet{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+        }
+        .datos-viaje{
+            display:flex;
+            align-items: center;
+            column-gap: 2rem;
+            border-bottom: .2rem solid v.$primario;
+            .titulo-viaje{
+                font-weight: 400;
+                color:v.$grisOscuro;
+                font-size: 1.8rem;
+                margin-bottom: 0;
+            }
+            .hora-viaje{
+                display:flex;
+                align-items: center;
+                column-gap: .3rem;
+                .reloj{
+                    width:1.5rem;
+                    height:1.5rem;  
+                }  
+            }
+        }
+    }
+    .conductor{
+        margin:2rem 0;
+        width:5rem;
+        height:5rem;
+        align-items: center;
+        column-gap: 1rem;
+        display:flex;
+        img{
+            border-radius: 50%;
+        }
+        
+    } 
+    .info-extra{
+        display:flex;
+        column-gap: 2rem;
+    }
+}
+

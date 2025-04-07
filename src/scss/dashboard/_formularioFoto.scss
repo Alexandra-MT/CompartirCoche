@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-pf{
+    background-color: v.$blanco;
+    height:45rem;
+
+.fotos{
+    padding-bottom: 1rem;
+    .foto{
+        position: relative;
+        overflow: hidden;
+        display:grid;
+        row-gap: 1rem;
+        justify-content: center;
+        label{
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            background-color: v.$primario;
+            color:v.$blanco;
+            border-radius: .4rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            //margin-bottom:1rem;
+        }
+        input[type="file"]{
+            color:v.$primario;
+            padding-top:0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+}
+    .eliminar{
+        display:flex;
+        margin:0 auto;
+        
+    }
+}

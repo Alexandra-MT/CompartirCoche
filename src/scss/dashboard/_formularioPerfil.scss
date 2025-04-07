@@ -1,0 +1,69 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario-perfil{
+    background-color: v.$blanco;
+    padding:5rem;
+    @include m.tablet{
+        padding:5rem 10rem;
+    }
+    
+    .header-perfil{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2rem;
+        margin-bottom: 5rem;
+        .imagen-perfil{
+            
+            img{
+                width:10rem;
+                height:10rem;
+                //background-size: cover;
+                border-radius: 50%;
+                border: .2rem solid v.$primario;
+            }    
+        }
+        .nombre{
+            h3{
+                margin:0 0 .5rem 0;
+            }
+            a{
+                color:v.$primario;
+                img{
+                    display: inline;
+                    width:1.2rem;
+                    margin-left: .5rem;
+                }
+            }
+            
+        }
+    
+    }
+    .seccion-perfil{
+        margin-bottom: 5rem;
+
+        h3{
+            display:inline;
+            text-align: left;
+            margin-top:5rem;
+            margin-bottom: 2rem;
+        }
+        p{
+            span{
+                font-weight: 700;
+            }
+            
+        }
+        a{
+            color:v.$primario;
+            img{
+                display: inline;
+                width:1.2rem;
+                margin-right:.3rem;
+            }
+        }
+    
+    }
+   
+}

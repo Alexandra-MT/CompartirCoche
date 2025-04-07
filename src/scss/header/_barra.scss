@@ -36,7 +36,7 @@
     }
 }
 .logo{
-    max-width:50%;
+    width:20rem;
    // margin: 0 auto;
 
     @include m.tablet{
@@ -45,13 +45,23 @@
     }
 }
 .barra.mostrar{
+    background-color: v.$primario;
+    display:flex;
+    justify-content: center;
+    height:60rem;
     .logo{
         display:none;
     }
-    display:flex;
-    justify-content: center;
-    a{
-        font-size: 2rem;
-        padding:.5rem;
+    .nav-principal{
+        margin-top: 5rem;
+        a{
+            font-size: 2rem;
+            padding:1rem;
+            color:v.$blanco;
+            &:hover{
+                cursor:pointer;
+                color: v.$secundario;
+            }
+        } 
     } 
 }
